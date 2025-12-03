@@ -111,8 +111,8 @@ virtual host)`
 106. `sudo su - eprints`
 107. `/opt/eprints3/bin/epadmin list_users repoutama`
 108. 
-109. `akses http![foto hasil](https://github.com/user-attachments/assets/0792b2e2-5e29-460e-876a-b9aa3a97ac67)
-://repoutama.local/cgi/users/home`
+109. akses http![foto hasil](https://github.com/user-attachments/assets/0792b2e2-5e29-460e-876a-b9aa3a97ac67)
+://repoutama.local/cgi/users/home
 110. 
 111. `log in dengan username dan password yang dibuat`
 112. `ANDDDD DONE`
