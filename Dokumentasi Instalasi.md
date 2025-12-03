@@ -111,5 +111,6 @@ virtual host)`
 106. `sudo su - eprints`
 107. `/opt/eprints3/bin/epadmin list_users repoutama`
 108. `akses http://repoutama.local/cgi/users/home`
-109. `log in dengan username dan password yang dibuat`
-110. `ANDDDD DONE`
+109. /home/zihannrae/Documents/Project-Deployment-EPrints/foto/foto hasil.jpeg
+110. `log in dengan username dan password yang dibuat`
+111. `ANDDDD DONE`
