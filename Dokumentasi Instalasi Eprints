@@ -1,0 +1,115 @@
+# **Dokumentasi Project Instalasi Eprints**
+
+Berikut adalah dokumentasi untuk project instalasi EPrints: 
+
+1. Membuka terminal, dan ketikkan command berikut : 
+2. `apt update && apt upgrade -y`
+3. `sudo apt-get install build-essential libarchive-tar-perl libwww-perl libxml-parser-perl libcrypt-ssleay-perl libapache2-mod-perl2 libdbd-mysql-perl mysql-server `
+4. `sudo tar -xzf '/home/user/Downloads/eprints-x.x.x.tar.gz'`
+5. `cd /opt/eprints-x.x.x`
+6. `ls /opt`
+7. `ls ~Downloads`
+8. `cd ~/Downloads tar -xzf eprints-x.x.x.tar.gz`
+9. `cd ~/Downloads tar -xzf eprints-x.x.x.tar.gz`
+10. `ls ~/Downloads`
+11.  `sudo mv ~/Downloads/eprints-x.x.x /opt/`
+12. `cd /opt/eprints-3.4.5`
+13. `sudo ./configure` 
+14. `sudo apt install libncurses-dev`
+15. `apt install perl libselinux1 apache2 libapache2-mod-perl2 libxml-libxml-perl \ ``libunicode-string-perl libterm-readkey-perl libmime-lite-perl libmime-types-perl libdigest-sha-perl \` 
+16. `sudo apt install libunicode-string-perl sudo apt install libterm-readkey-perl sudo apt install libmime-lite-perl sudo apt install libdigest-sha-perl \ sudo apt install libdbd-mysql-perl libxml-parser-perl libxml2-dev libxml-twig-perl libarchive-any-perl libjson-perl`
+17. `sudo apt install liblwp-protocol-https-perl libtext-unidecode-perl lynx wget ghostscript poppler-utils antiword elinks` `sudo apt install texlive-base texlive-binaries psutils imagemagick adduser tar gzip unzip libsearch-xapian-perl`
+18. `sudo apt install libtex-encode-perl libio-string-perl python3-html2text make libexpat1-dev libxslt1-dev`
+19. `adduser eprints`
+20. `ls /etc/apache2/sites-available/`  *Perintah ini untuk melihat konfigurasi yg aktif*
+21. `ls /etc/apache2/sites-available/ (utk melihat konfigurasi yg aktif)`
+22. `sudo a2ensite eprints.conf (untuk men- enable site)`
+23. `sudo systemctl reload apache2`
+24. `sudo apt install gedit (fungsinya sama kaya sudo nano, cuma bedanya lebih fleksibel buat edit
+virtual host)`
+25. `sudo gedit /etc/apache2/sites-available/eprints.conf`
+26. `sudo systemctl restart apache2`
+27. `cd /opt/eprints-3.4.5/`
+28. `ls`
+29. `./configure`
+30. `make install`
+31. `ls`
+32. `cd bin`
+33. `ls`
+34. `cd /opt/`
+35. `ls`
+36. `cd eprints3/bin`
+37. `ls`
+38. `sudo /opt/eprints3/bin/epadmin help`
+39. `id eprints`
+40. `sudo -u eprints`
+41. `sudo useradd -d /opt/eprints3 -s /bin/bash eprints`
+42. `sudo -u eprints /opt/eprints3/bin/epadmin help`
+43. `sudo -u eprints /opt/eprints3/bin/epadmin create zero (mengisi archive id, hostname, alias, dll)`
+44. `sudo systemctl restart apache2`
+45. `sudo a2ensite eprints`
+46. `sudo systemctl reload apache2`
+47. `apachectl -t`
+48. `sudo a2enmod cgi`
+49. `sudo a2enmod perl`
+50. `sudo systemctl restart apache2`
+51. `sudo a2ensite eprints`
+52. `sudo systemctl reload apache2`
+53. `grep ScriptAlias /opt/eprints3/archives/*/cfg/apache.conf`
+54. `cd archives`
+55. `ls`
+56. `cd repoutama`
+57. `ls`
+58. `cd cfg`
+59. `ls`
+60. `sudo -u eprints /opt/eprints3/bin/generate_apacheconf repoutama > /tmp/repoutama_apache.conf`
+61. `sudo cp /tmp/repoutama_apache.conf /etc/apache2/sites-available/eprints.conf`
+62. `sudo a2ensite eprints`
+63. `sudo a2enmod cgi`
+64. `sudo a2enmod perl`
+65. `sudo systemctl restart apache2`
+66. `sudo apachectl -t`
+67. `sudo gedit /etc/apache2/sites-available/eprints.conf`
+68. `sudo apachectl -t`
+69. `sudo -u eprints /opt/eprints3/bin/generate_apacheconf repoutama >/tmp/repoutama_apache.conf`
+70. `cat /tmp/repoutama_apache.conf`
+71. `sudo a2dissite eprints`
+72. `sudo rm /etc/apache2/sites-available/eprints.conf 2>/dev/null`
+73. `sudo rm /etc/apache2/sites-enabled/eprints.conf 2>/dev/null`
+74. `sudo -u eprints /opt/eprints3/bin/generate_apacheconf --system --replace`
+75. `cat /tmp/repoutama_apache.conf`
+76. `sudo gedit /etc/apache2/apache2.conf`
+77. `sudo a2enmod cgi`
+78. `sudo a2enmod perl`
+79. `sudo systemctl restart apache2`
+80. `sudo systemctl status apache2`
+81. `sudo gedit /etc/hosts/`
+82. `grep -i ServerName /opt/eprints3/cfg/apache/*.conf`
+83. `ping repoutama.local -c 2`
+84. `sudo apachectl -S`
+85. `grep -R "opt/eprints3/cfg/apache.conf" /etc/apache2/apache2.conf`
+86. `ls /opt/eprints3/cfg/apache/`
+87. `curl -v http://repoutama.local/cgi/users/login`
+88. `sudo a2ensite repoutama.conf`
+89. `sudo a2dissite 000-default.conf`
+90. `sudo systemctl restart apache2`
+91. `apache2ctl -S`
+92. `sudo a2dissite myrepo.conf`
+93. `sudo rm /etc/apache2/sites-available/myrepo.conf`
+94. `sudo rm /etc/apache2/sites-enabled/myrepo.conf`
+95. `sudo rm /opt/eprints3/cfg/apache/myrepo.conf`
+96. `sudo systemctl restart apache2`
+97. `apache2ctl -S`
+98. `curl -v http://repoutama.local/cgi/users/login`
+99. `sudo chmod -R 755 /opt/eprints3/cgi`
+100. `sudo chmod -R 755 /opt/eprints3/archives/repoutama/cgi`
+101. `sudo chown -R eprints:www-data /opt/eprints3/cgi`
+102. `sudo chown -R eprints:www-data /opt/eprints3/archives/repoutama/cgi`
+103. `sudo systemctl restart apache2`
+104. `curl -v http://repoutama.local/cgi/users/login`
+105. `sudo tail -n 30 /var/log/apache2/error.log`
+106. `sudo su - eprints`
+107. `/opt/eprints3/bin/epadmin list_users repoutama`
+108. `akses http://repoutama.local/cgi/users/home`
+109. `log in dengan username dan password yang dibuat`
+110. `ANDDDD DONE`
