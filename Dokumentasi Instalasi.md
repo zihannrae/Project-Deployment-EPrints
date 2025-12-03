@@ -3,10 +3,10 @@
 Berikut adalah dokumentasi untuk project instalasi EPrints: 
 
 1. Membuka terminal, dan ketikkan command berikut : 
-2. `apt update && apt upgrade -y`
-3. `sudo apt-get install build-essential libarchive-tar-perl libwww-perl libxml-parser-perl libcrypt-ssleay-perl libapache2-mod-perl2 libdbd-mysql-perl mysql-server `
-4. `sudo tar -xzf '/home/user/Downloads/eprints-x.x.x.tar.gz'`
-5. `cd /opt/eprints-x.x.x`
+2. `apt update && apt upgrade -y` *untuk melakukan update sistem*
+3. `sudo apt-get install build-essential libarchive-tar-perl libwww-perl libxml-parser-perl libcrypt-ssleay-perl libapache2-mod-perl2 libdbd-mysql-perl mysql-server ` *untuk instalasi dependency*
+4. `sudo tar -xzf '/home/user/Downloads/eprints-x.x.x.tar.gz'` *Perintah ini berfungsi untuk mengekstrak Versi terbaru eprints yang telah diunduh ke dalam direktori /opt.*
+5. `cd /opt/eprints-x.x.x` *Perintah ini berfungsi untuk mengubah direktori ke folder EPrints yang telah diekstrak.*
 6. `ls /opt`
 7. `ls ~Downloads`
 8. `cd ~/Downloads tar -xzf eprints-x.x.x.tar.gz`
@@ -20,13 +20,12 @@ Berikut adalah dokumentasi untuk project instalasi EPrints:
 16. `sudo apt install libunicode-string-perl sudo apt install libterm-readkey-perl sudo apt install libmime-lite-perl sudo apt install libdigest-sha-perl \ sudo apt install libdbd-mysql-perl libxml-parser-perl libxml2-dev libxml-twig-perl libarchive-any-perl libjson-perl`
 17. `sudo apt install liblwp-protocol-https-perl libtext-unidecode-perl lynx wget ghostscript poppler-utils antiword elinks` `sudo apt install texlive-base texlive-binaries psutils imagemagick adduser tar gzip unzip libsearch-xapian-perl`
 18. `sudo apt install libtex-encode-perl libio-string-perl python3-html2text make libexpat1-dev libxslt1-dev`
-19. `adduser eprints`
+19. `adduser eprints` *Menambahkan user Eprints.*
 20. `ls /etc/apache2/sites-available/`  *Perintah ini untuk melihat konfigurasi yg aktif*
 21. `ls /etc/apache2/sites-available/ (utk melihat konfigurasi yg aktif)`
-22. `sudo a2ensite eprints.conf (untuk men- enable site)`
-23. `sudo systemctl reload apache2`
-24. `sudo apt install gedit (fungsinya sama kaya sudo nano, cuma bedanya lebih fleksibel buat edit
-virtual host)`
+22. `sudo a2ensite eprints.conf` *(untuk men- enable site)*
+23. `sudo systemctl reload apache2` *Reload Apache*
+24. `sudo apt install gedit` *Memiliki fungsi yang sama dengan sudo nano, namun lebih fleksibel untuk edit virtual host.*
 25. `sudo gedit /etc/apache2/sites-available/eprints.conf`
 26. `sudo systemctl restart apache2`
 27. `cd /opt/eprints-3.4.5/`
