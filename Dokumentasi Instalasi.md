@@ -2,11 +2,11 @@
 
 Berikut adalah dokumentasi untuk project instalasi EPrints: 
 
-1. Membuka terminal, dan ketikkan command berikut : 
-2. `apt update && apt upgrade -y` *untuk melakukan update sistem*
-3. `sudo apt-get install build-essential libarchive-tar-perl libwww-perl libxml-parser-perl libcrypt-ssleay-perl libapache2-mod-perl2 libdbd-mysql-perl mysql-server ` *untuk instalasi dependency*
-4. `sudo tar -xzf '/home/user/Downloads/eprints-x.x.x.tar.gz'` *Perintah ini berfungsi untuk mengekstrak Versi terbaru eprints yang telah diunduh ke dalam direktori /opt.*
-5. `cd /opt/eprints-x.x.x` *Perintah ini berfungsi untuk mengubah direktori ke folder EPrints yang telah diekstrak.*
+1. **Membuka terminal, dan ketikkan command berikut :** 
+2. `apt update && apt upgrade -y` **untuk melakukan update sistem.**
+3. `sudo apt-get install build-essential libarchive-tar-perl libwww-perl libxml-parser-perl libcrypt-ssleay-perl libapache2-mod-perl2 libdbd-mysql-perl mysql-server ` **untuk instalasi dependency**
+4. `sudo tar -xzf '/home/user/Downloads/eprints-x.x.x.tar.gz'` **Perintah ini berfungsi untuk mengekstrak Versi terbaru eprints yang telah diunduh ke dalam direktori /opt.**
+5. `cd /opt/eprints-x.x.x` **Perintah ini berfungsi untuk mengubah direktori ke folder EPrints yang telah diekstrak.**
 6. `ls /opt`
 7. `ls ~Downloads`
 8. `cd ~/Downloads tar -xzf eprints-x.x.x.tar.gz`
@@ -19,13 +19,13 @@ Berikut adalah dokumentasi untuk project instalasi EPrints:
 15. `apt install perl libselinux1 apache2 libapache2-mod-perl2 libxml-libxml-perl \ ``libunicode-string-perl libterm-readkey-perl libmime-lite-perl libmime-types-perl libdigest-sha-perl \` 
 16. `sudo apt install libunicode-string-perl sudo apt install libterm-readkey-perl sudo apt install libmime-lite-perl sudo apt install libdigest-sha-perl \ sudo apt install libdbd-mysql-perl libxml-parser-perl libxml2-dev libxml-twig-perl libarchive-any-perl libjson-perl`
 17. `sudo apt install liblwp-protocol-https-perl libtext-unidecode-perl lynx wget ghostscript poppler-utils antiword elinks` `sudo apt install texlive-base texlive-binaries psutils imagemagick adduser tar gzip unzip libsearch-xapian-perl`
-18. `sudo apt install libtex-encode-perl libio-string-perl python3-html2text make libexpat1-dev libxslt1-dev`
-19. `adduser eprints` *Menambahkan user Eprints.*
-20. `ls /etc/apache2/sites-available/`  *Perintah ini untuk melihat konfigurasi yg aktif*
-21. `ls /etc/apache2/sites-available/ (utk melihat konfigurasi yg aktif)`
-22. `sudo a2ensite eprints.conf` *(untuk men- enable site)*
-23. `sudo systemctl reload apache2` *Reload Apache*
-24. `sudo apt install gedit` *Memiliki fungsi yang sama dengan sudo nano, namun lebih fleksibel untuk edit virtual host.*
+18. `sudo apt install libtex-encode-perl libio-string-perl python3-html2text make libexpat1-dev libxslt1-dev` **Langkah 14-18 adalah penginstalan dependency.**
+19. `adduser eprints` **Menambahkan user Eprints.**
+20. `ls /etc/apache2/sites-available/`  **Perintah ini untuk melihat konfigurasi yg aktif.**
+21. `ls /etc/apache2/sites-available/` **Untuk melihat konfigurasi yg aktif.**
+22. `sudo a2ensite eprints.conf` **Untuk men- enable site.**
+23. `sudo systemctl reload apache2` **Reload Apache.**
+24. `sudo apt install gedit` **Memiliki fungsi yang sama dengan sudo nano, namun lebih fleksibel untuk edit virtual host.**
 25. `sudo gedit /etc/apache2/sites-available/eprints.conf`
 26. `sudo systemctl restart apache2`
 27. `cd /opt/eprints-3.4.5/`
@@ -110,5 +110,5 @@ Berikut adalah dokumentasi untuk project instalasi EPrints:
 106. `sudo su - eprints`
 107. `/opt/eprints3/bin/epadmin list_users repoutama`
 108. `akses http:/repoutama.local/cgi/users/home` ![foto hasil](https://github.com/user-attachments/assets/0792b2e2-5e29-460e-876a-b9aa3a97ac67)
-109. `log in dengan username dan password yang dibuat`
-110. `ANDDDD DONE`
+109. **Log in dengan username dan password yang dibuat**
+110. **Langkah selesai.**
