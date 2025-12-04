@@ -138,43 +138,63 @@ Berikut adalah dokumentasi untuk project instalasi EPrints:
         cat /tmp/repoutama_apache.conf
 
   #### Nonaktifkan (disable) konfigurasi virtual host Apache bernama eprints.conf.
-72. `sudo a2dissite eprints`
-73. `sudo rm /etc/apache2/sites-available/eprints.conf 2>/dev/null`
-74. `sudo rm /etc/apache2/sites-enabled/eprints.conf 2>/dev/null`
-75. `sudo -u eprints /opt/eprints3/bin/generate_apacheconf --system --replace`
-76. `cat /tmp/repoutama_apache.conf`
-77. `sudo gedit /etc/apache2/apache2.conf`
-78. `sudo a2enmod cgi`
-79. `sudo a2enmod perl`
-80. `sudo systemctl restart apache2`
-81. `sudo systemctl status apache2`
-82. `sudo gedit /etc/hosts/`
-83. `grep -i ServerName /opt/eprints3/cfg/apache/*.conf`
-84. `ping repoutama.local -c 2`
-85. `sudo apachectl -S`
-86. `grep -R "opt/eprints3/cfg/apache.conf" /etc/apache2/apache2.conf`
-87. `ls /opt/eprints3/cfg/apache/`
-88. `curl -v http://repoutama.local/cgi/users/login`
-89. `sudo a2ensite repoutama.conf`
-90. `sudo a2dissite 000-default.conf`
-91. `sudo systemctl restart apache2`
-92. `apache2ctl -S`
-93. `sudo a2dissite myrepo.conf`
-94. `sudo rm /etc/apache2/sites-available/myrepo.conf`
-95. `sudo rm /etc/apache2/sites-enabled/myrepo.conf`
-96. `sudo rm /opt/eprints3/cfg/apache/myrepo.conf`
-97. `sudo systemctl restart apache2`
-98. `apache2ctl -S`
-99. `curl -v http://repoutama.local/cgi/users/login`
-100. `sudo chmod -R 755 /opt/eprints3/cgi`
-101. `sudo chmod -R 755 /opt/eprints3/archives/repoutama/cgi`
-102. `sudo chown -R eprints:www-data /opt/eprints3/cgi`
-103. `sudo chown -R eprints:www-data /opt/eprints3/archives/repoutama/cgi`
-104. `sudo systemctl restart apache2`
-105. `curl -v http://repoutama.local/cgi/users/login`
-106. `sudo tail -n 30 /var/log/apache2/error.log`
-107. `sudo su - eprints`
-108. `/opt/eprints3/bin/epadmin list_users repoutama`
-109. `akses http:/repoutama.local/cgi/users/home` ![foto hasil](https://github.com/user-attachments/assets/0792b2e2-5e29-460e-876a-b9aa3a97ac67)
-110. **Log in dengan username dan password yang dibuat**
-111. **Langkah selesai.**
+        sudo a2dissite eprints
+
+  #### Hapus file konfigurasi Apache eprints.conf dan file symlink virtual host EPrints yang aktif di Apache
+        sudo rm /etc/apache2/sites-available/eprints.conf 2>/dev/null
+        sudo rm /etc/apache2/sites-enabled/eprints.conf 2>/dev/null
+        
+  ### Buat ulang (“regenerate”) konfigurasi Apache global EPrints, lalu timpa (replace) file konfigurasi sistem yang digunakan oleh Apache.
+        sudo -u eprints /opt/eprints3/bin/generate_apacheconf --system --replace
+
+  #### Buka file konfigurasi utama Apache (apache2.conf) menggunakan editor teks Gedit dengan hak akses root.
+        sudo gedit /etc/apache2/apache2.conf
+
+  #### Aktifkan modul cgi dan perl pada apache, restart apache, dan cek status
+        sudo a2enmod cgi
+        sudo a2enmod perl
+        sudo systemctl restart apache2
+        sudo systemctl status apache2
+
+  #### buka dan edit file /etc/hosts menggunakan editor Gedit dengan hak akses root.
+        sudo gedit /etc/hosts/
+
+  #### Mengecek apakah konfigurasi ServerName sudah benar.
+        grep -i ServerName /opt/eprints3/cfg/apache/*.conf
+
+  #### Tes apakah hostname repoutama.local dapat di-resolve dan merespon jaringan
+        ping repoutama.local -c 2
+
+  #### Cek informasi konfigurasi virtual host Apache
+        sudo apachectl -S
+
+  #### Kirim permintaan HTTP secara detail (verbose) ke URL EPrints, aktifkan virtual host, nonaktifkan virtual host, restart apache
+        curl -v http://repoutama.local/cgi/users/login
+        sudo a2ensite repoutama.conf
+        sudo a2dissite 000-default.conf
+        sudo systemctl restart apache2
+    
+  #### Kirim permintaan HTTP secara detail (verbose) ke URL EPrints
+        curl -v http://repoutama.local/cgi/users/login`
+
+  #### Ubah hak akses (permissions) seluruh file dan folder di /opt/eprints3/cgi, dan di direktori CGI repository agar dapat dieksekusi oleh Apache.        
+        sudo chmod -R 755 /opt/eprints3/cgi
+        sudo chmod -R 755 /opt/eprints3/archives/repoutama/cgi
+
+  #### Ubah kepemilikan (owner dan group) dari semua file dan folder di /opt/eprints3/cgi dan di direktori CGI repository, lalu restart apache
+        sudo chown -R eprints:www-data /opt/eprints3/cgi
+        sudo chown -R eprints:www-data /opt/eprints3/archives/repoutama/cgi
+        sudo systemctl restart apache2
+
+  #### Kirim permintaan HTTP secara detail (verbose) ke URL EPrints
+        curl -v http://repoutama.local/cgi/users/login
+
+  #### Pindah menjadi user eprints dan 
+        sudo su - eprints
+
+  #### Akses laman eprints yang sudah selesai
+        akses http:/repoutama.local/cgi/users/home`
+  ![foto hasil](https://github.com/user-attachments/assets/0792b2e2-5e29-460e-876a-b9aa3a97ac67)
+  
+  ### Log in dengan username dan password yang dibuat
+        Instalasi selesai
