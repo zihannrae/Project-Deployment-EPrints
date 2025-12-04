@@ -2,35 +2,78 @@
 
 Berikut adalah dokumentasi untuk project instalasi EPrints: 
 
-1. **Membuka terminal, dan ketikkan command berikut :** 
-2. `apt update && apt upgrade -y` **untuk melakukan update sistem.**
-3. `sudo apt-get install build-essential libarchive-tar-perl libwww-perl libxml-parser-perl libcrypt-ssleay-perl libapache2-mod-perl2 libdbd-mysql-perl mysql-server ` **untuk instalasi dependency**
-4. `sudo tar -xzf '/home/user/Downloads/eprints-x.x.x.tar.gz'` **Perintah ini berfungsi untuk mengekstrak Versi terbaru eprints yang telah diunduh ke dalam direktori /opt.**
-5. `cd /opt/eprints-x.x.x` **Perintah ini berfungsi untuk mengubah direktori ke folder EPrints yang telah diekstrak.**
-6. `ls /opt`
-7. `ls ~Downloads`
-8. `cd ~/Downloads tar -xzf eprints-x.x.x.tar.gz`
-9. `cd ~/Downloads tar -xzf eprints-x.x.x.tar.gz`
-10. `ls ~/Downloads`
-11.  `sudo mv ~/Downloads/eprints-x.x.x /opt/`
-12. `cd /opt/eprints-3.4.5`
-13. `sudo ./configure` 
-14. `sudo apt install libncurses-dev`
-15. `apt install perl libselinux1 apache2 libapache2-mod-perl2 libxml-libxml-perl \ ``libunicode-string-perl libterm-readkey-perl libmime-lite-perl libmime-types-perl libdigest-sha-perl \` 
-16. `sudo apt install libunicode-string-perl sudo apt install libterm-readkey-perl sudo apt install libmime-lite-perl sudo apt install libdigest-sha-perl \ sudo apt install libdbd-mysql-perl libxml-parser-perl libxml2-dev libxml-twig-perl libarchive-any-perl libjson-perl`
-17. `sudo apt install liblwp-protocol-https-perl libtext-unidecode-perl lynx wget ghostscript poppler-utils antiword elinks` `sudo apt install texlive-base texlive-binaries psutils imagemagick adduser tar gzip unzip libsearch-xapian-perl`
-18. `sudo apt install libtex-encode-perl libio-string-perl python3-html2text make libexpat1-dev libxslt1-dev` **Langkah 14-18 adalah penginstalan dependency.**
-19. `adduser eprints` **Menambahkan user Eprints.**
-20. `ls /etc/apache2/sites-available/`  **Perintah ini untuk melihat konfigurasi yg aktif.**
-21. `ls /etc/apache2/sites-available/` **Untuk melihat konfigurasi yg aktif.**
-22. `sudo a2ensite eprints.conf` **Untuk men- enable site.**
-23. `sudo systemctl reload apache2` **Reload Apache.**
-24. `sudo apt install gedit` **Memiliki fungsi yang sama dengan sudo nano, namun lebih fleksibel untuk edit virtual host.**
-25. `sudo gedit /etc/apache2/sites-available/eprints.conf`
-26. `sudo systemctl restart apache2`
-27. `cd /opt/eprints-3.4.5/`
-28. `ls`
-29. `./configure`
+**Buka terminal, dan ketikkan command berikut :** 
+
+  #### Lakukan Update sistem 
+      `apt update && apt upgrade -y`
+
+  #### Install *dependency* yang dibutuhkan EPrints 
+     `sudo apt-get install build-essential libarchive-tar-perl libwww-perl libxml-parser-perl libcrypt-ssleay-perl libapache2-mod-perl2 libdbd-mysql-perl mysql-server` 
+
+  #### Unduh versi EPrints dari halaman resmi EPrints
+        Lakukan pengunduhan melalui laman <https://files.eprints.org/>
+        
+  #### Ekstrak versi EPrints yang telah diunduh ke dalam direktori /opt
+      `sudo tar -xzf '/home/user/Downloads/eprints-x.x.x.tar.gz'` 
+
+  #### Ubah direktori ke folder EPrints yang telah diekstrak 
+      `cd /opt/eprints-x.x.x` 
+
+  #### Pastikan EPrints telah berada di direktori
+      *Command* berikut berfungi untuk menampilkan isi direktori
+     `ls /opt`
+     `ls ~Downloads`
+
+  #### Pindah ke direktori downloads dan ekstrak file EPrints
+      `cd ~/Downloads tar -xzf eprints-x.x.x.tar.gz`
+
+  #### Tampilkan daftar file dan folder yang ada di dalam direktori Downloads milik user
+      `ls ~/Downloads`
+
+  #### Pindahkan folder instalasi EPrints dari ~/Downloads ke direktori /opt/ menggunakan hak akses administrator (sudo).
+      `sudo mv ~/Downloads/eprints-x.x.x /opt/`
+
+  #### Masuk ke direktori instalasi EPrints versi 3.4.5 yang berada di dalam /opt/.
+      `cd /opt/eprints-3.4.5`
+      
+  #### Jalankan script konfigurasi awal dari paket EPrints sebelum instalasi dilakukan.
+       `sudo ./configure` 
+
+  #### Lakukan isntalasi *dependency* yang dibutuhkan
+      `sudo apt install libncurses-dev`
+       `apt install perl libselinux1 apache2 libapache2-mod-perl2 libxml-libxml-perl \ ``libunicode-string-perl libterm-readkey-perl libmime-lite-perl libmime-types-perl libdigest-sha-perl \` 
+       `sudo apt install libunicode-string-perl sudo apt install libterm-readkey-perl sudo apt install libmime-lite-perl sudo apt install libdigest-sha-perl \ sudo apt install libdbd-mysql-perl libxml-parser-perl libxml2-dev libxml-twig-perl libarchive-any-perl libjson-perl`
+       `sudo apt install liblwp-protocol-https-perl libtext-unidecode-perl lynx wget ghostscript poppler-utils antiword elinks` `sudo apt install texlive-base texlive-binaries psutils imagemagick adduser tar gzip unzip libsearch-xapian-perl`
+       `sudo apt install libtex-encode-perl libio-string-perl python3-html2text make libexpat1-dev libxslt1-dev` 
+
+  #### Menambahkan user EPrints
+      `adduser eprints` 
+
+  #### Lihat konfigurasi yang aktif 
+      `ls /etc/apache2/sites-available/`  
+
+  #### Aktifkan konfigurasi virtual host Apache
+      `sudo a2ensite eprints.conf` 
+
+  #### Reload Apache
+      `sudo systemctl reload apache2` 
+
+  #### Menginstall aplikasi gedit, text editor GUI bawaan GNOME, menggunakan manajer paket APT.
+      gedit memiliki fungsi yang sama dengan sudo nano, namun lebih fleksibel untuk edit virtual host.
+       `sudo apt install gedit`
+
+  #### Buka file konfigurasi virtual host Apache untuk EPrints menggunakan editor teks GUI gedit dengan hak administrator.
+      `sudo gedit /etc/apache2/sites-available/eprints.conf`
+
+  ##### Restart Apache
+     `sudo systemctl restart apache2`
+
+  ####  Masuk ke direktori instalasi EPrints versi 3.4.5 yang berada di dalam /opt/.
+      `cd /opt/eprints-3.4.5/`
+
+  #### Tampilkan daftar file dan folder yang ada di direktori saat ini dan jalankan script konfigurasi yang berada di direktori saat ini.
+       `ls`
+       `./configure`
 30. `make install`
 31. `ls`
 32. `cd bin`
