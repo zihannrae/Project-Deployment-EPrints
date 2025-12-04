@@ -20,7 +20,7 @@ Berikut adalah dokumentasi untuk project instalasi EPrints:
       `cd /opt/eprints-x.x.x` 
 
   #### Pastikan EPrints telah berada di direktori
-  *Command* berikut berfungi untuk menampilkan isi direktori
+      *Command* berikut berfungi untuk menampilkan isi direktori
      `ls /opt`
      `ls ~Downloads`
 
