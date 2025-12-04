@@ -8,7 +8,7 @@ Berikut adalah dokumentasi untuk project instalasi EPrints:
       `apt update && apt upgrade -y`
 
   #### Install *dependency* yang dibutuhkan EPrints 
-     `sudo apt-get install build-essential libarchive-tar-perl libwww-perl libxml-parser-perl libcrypt-ssleay-perl libapache2-mod-perl2 libdbd-mysql-perl mysql-server` 
+     `sudo apt update && sudo apt install -y build-essential libarchive-tar-perl libwww-perl libxml-parser-perl libcrypt-ssleay-perl libapache2-mod-perl2 libdbd-mysql-perl mysql-server libncurses-dev perl libselinux1 apache2 libxml-libxml-perl libunicode-string-perl libterm-readkey-perl libmime-lite-perl libmime-types-perl libdigest-sha-perl libxml2-dev libxml-twig-perl libarchive-any-perl libjson-perl liblwp-protocol-https-perl libtext-unidecode-perl lynx wget ghostscript poppler-utils antiword elinks texlive-base texlive-binaries psutils imagemagick adduser tar gzip unzip libtex-encode-perl libio-string-perl python3-html2text make libexpat1-dev libxslt1-dev` 
 
   #### Unduh versi EPrints dari halaman resmi EPrints
         Lakukan pengunduhan melalui laman <https://files.eprints.org/>
@@ -37,14 +37,7 @@ Berikut adalah dokumentasi untuk project instalasi EPrints:
       `cd /opt/eprints-3.4.5`
       
   #### Jalankan script konfigurasi awal dari paket EPrints sebelum instalasi dilakukan.
-       `sudo ./configure` 
-
-  #### Lakukan isntalasi *dependency* yang dibutuhkan
-      `sudo apt install libncurses-dev`
-       `apt install perl libselinux1 apache2 libapache2-mod-perl2 libxml-libxml-perl \ ``libunicode-string-perl libterm-readkey-perl libmime-lite-perl libmime-types-perl libdigest-sha-perl \` 
-       `sudo apt install libunicode-string-perl sudo apt install libterm-readkey-perl sudo apt install libmime-lite-perl sudo apt install libdigest-sha-perl \ sudo apt install libdbd-mysql-perl libxml-parser-perl libxml2-dev libxml-twig-perl libarchive-any-perl libjson-perl`
-       `sudo apt install liblwp-protocol-https-perl libtext-unidecode-perl lynx wget ghostscript poppler-utils antiword elinks` `sudo apt install texlive-base texlive-binaries psutils imagemagick adduser tar gzip unzip libsearch-xapian-perl`
-       `sudo apt install libtex-encode-perl libio-string-perl python3-html2text make libexpat1-dev libxslt1-dev` 
+       `sudo ./configure`  
 
   #### Menambahkan user EPrints
       `adduser eprints` 
