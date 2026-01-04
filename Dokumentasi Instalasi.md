@@ -5,24 +5,24 @@ Berikut adalah dokumentasi untuk project instalasi EPrints:
 **Buka terminal, dan ketikkan command berikut :** 
 
   #### Lakukan Update sistem 
-      `apt update && apt upgrade -y`
+      apt update && apt upgrade -y
 
   #### Install *dependency* yang dibutuhkan EPrints 
-     `sudo apt update && sudo apt install -y build-essential libarchive-tar-perl libwww-perl libxml-parser-perl libcrypt-ssleay-perl libapache2-mod-perl2 libdbd-mysql-perl mysql-server libncurses-dev perl libselinux1 apache2 libxml-libxml-perl libunicode-string-perl libterm-readkey-perl libmime-lite-perl libmime-types-perl libdigest-sha-perl libxml2-dev libxml-twig-perl libarchive-any-perl libjson-perl liblwp-protocol-https-perl libtext-unidecode-perl lynx wget ghostscript poppler-utils antiword elinks texlive-base texlive-binaries psutils imagemagick adduser tar gzip unzip libtex-encode-perl libio-string-perl python3-html2text make libexpat1-dev libxslt1-dev` 
+     sudo apt update && sudo apt install -y build-essential libarchive-tar-perl libwww-perl libxml-parser-perl libcrypt-ssleay-perl libapache2-mod-perl2 libdbd-mysql-perl mysql-server libncurses-dev perl libselinux1 apache2 libxml-libxml-perl libunicode-string-perl libterm-readkey-perl libmime-lite-perl libmime-types-perl libdigest-sha-perl libxml2-dev libxml-twig-perl libarchive-any-perl libjson-perl liblwp-protocol-https-perl libtext-unidecode-perl lynx wget ghostscript poppler-utils antiword elinks texlive-base texlive-binaries psutils imagemagick adduser tar gzip unzip libtex-encode-perl libio-string-perl python3-html2text make libexpat1-dev libxslt1-dev 
 
   #### Unduh versi EPrints dari halaman resmi EPrints
         Lakukan pengunduhan melalui laman <https://files.eprints.org/>
         
   #### Ekstrak versi EPrints yang telah diunduh ke dalam direktori /opt
-      `sudo tar -xzf '/home/user/Downloads/eprints-x.x.x.tar.gz'` 
+      sudo tar -xzf '/home/user/Downloads/eprints-x.x.x.tar.gz' 
 
   #### Ubah direktori ke folder EPrints yang telah diekstrak 
-      `cd /opt/eprints-x.x.x` 
+      cd /opt/eprints-x.x.x 
 
   #### Pastikan EPrints telah berada di direktori
       *Command* berikut berfungi untuk menampilkan isi direktori
-     `ls /opt`
-     `ls ~Downloads`
+     ls /opt
+     ls ~Downloads
 
   #### Pindah ke direktori downloads dan ekstrak file EPrints
       `cd ~/Downloads tar -xzf eprints-x.x.x.tar.gz`
